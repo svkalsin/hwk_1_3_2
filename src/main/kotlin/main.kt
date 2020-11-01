@@ -17,7 +17,8 @@ fun commission(typeCard: String = "VK pay", sumLastTransfers: Float = 0f, sumTra
             }
         }
         "Visa", "Мир" -> {
-            return if (sumTransfer * (0.0075) < 35) 35.0 else sumTransfer * (0.0075)
+            val commissionSum = sumTransfer * (0.0075)
+            return if (commissionSum < 35) 35.0 else commissionSum
         }
     }
     return 0.0
